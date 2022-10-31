@@ -138,7 +138,7 @@ OLED C click features the PSP27801 OLED display, with the resolution of 96x96 pi
 
 - Add UART components needed for console logs and commands. Right click on the "⬦" in Zigbee console and add the satisfier and in the same way add SERCOM0 to the USART console. 
 
-![](Docs/add_satisfier_m.png)
+![](Docs/CI_PROJECT_GRAPH.png)
 
 **Step 12** - In MCC harmony project graph select the SERCOM0 and configure as shown below.
 
