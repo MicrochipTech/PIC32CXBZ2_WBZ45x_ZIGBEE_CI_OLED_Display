@@ -424,6 +424,8 @@ LCD_PRINT(0,2,printData);
 
 ### Getting started with ZIGBEE MULTISENSOR with WBZ451 CURIOSITY BOARD.
 
+The Multisensor device sends the Temperature and Humidity values to the Zigbee(Combined Interface) device and it displays the values in the OLED display.
+
 - Refer the link to Implement the [ZIGBEE MULTISENSOR](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_ZIGBEE_MULTISENSOR_TEMPHUM13_CLICK) application.
 
 ![](docs/Hardware_Setup.png)
