@@ -102,53 +102,89 @@ OLED C click features the PSP27801 OLED display, with the resolution of 96x96 pi
 
 ![](docs/1_project_graph.png)
 
-**Step 3** - In MCC harmony project graph, select system and configure as mentioned below.
-
-![](docs/2_system1.png) ![](docs/3_system2.png)
-
-**Step 4** - In MCC harmony project graph, select FreeRTOS and configure as mentioned below.
-
-![](docs/4_freertos.png)
-
-**Step 5** - In MCC harmony project graph, select Core and configure as mentioned below.
-
-![](docs/5_core.png)
-
-**Step 6** - In MCC harmony project graph, select GFX Core LE and configure as mentioned below.
-
-![](docs/6_gfx_core_le.png)
-
-**Step 7** - In MCC harmony project graph select the SERCOM1 from device resources->peripherals and configure as shown below.
-
-![](docs/7_sercom1.png)
-
-**Step 8** - In MCC harmony project graph, select SPI and configure as mentioned below.
-
-![](docs/8_spi.png)
-
-**Step 9** - In MCC harmony project graph, select LE External Controller and configure as mentioned below.
-
-![](docs/9_le_external_1.png) ![](docs/9_le_external_2.png)
-
-**Step 10** - In MCC harmony project graph, select Legato and configure as mentioned below.
+**Step 3** - In MCC harmony project graph, Add Legato from Device Resources under Libraries->Harmony->Graphics->Middleware and configure it.
 
 ![](docs/LEGATO_RTOS.png)
 
-**Step 11** - In MCC harmony project graph select the Combined Interface from device resources->wireless->drivers->Zigbee->Device Types and configure as shown below.
+- To add satisfiers as shown below right click on the "⬦" in Legato->LE Display Driver and add the satisfier "LE External Controller" and will prompt an Auto-activation for "GFX Core LE" component, give yes to add the component. 
+
+![](docs/legao_satisfier.png)
+
+**Step 4** - In MCC harmony project graph, select LE External Controller and configure as mentioned below.
+
+![](docs/9_le_external_1.png) 
+
+- Use these comments while configuring.
+
+```
+Make display ON
+SET_REMAP_DUAL_COM_LINE_COMMAND
+SET_DISPLAY_START_LINE_COMMAND
+```
+
+![](docs/9_le_external_2.png)
+
+**Step 5** - In MCC harmony project graph, select GFX Core LE and configure as mentioned below.
+
+![](docs/6_gfx_core_le.png)
+
+- To add satisfiers as shown below right click on the "⬦" in LE External Controller->SPI Display Interface and add the satisfier "LE SPI 4-line" to add the component. 
+
+![](docs/le_ext_cont_satis.png)
+
+- Again right click on the "o" in LE External Controller->SYS_TIME and add the satisfier "TIME" and will prompt an Auto-activation for "core"&"FreeRTOS" component, give yes to add the component. 
+
+- Again right click on the "⬦" in TIME->TMR and add the satisfier "TC0" to add the component.
+
+**Step 6** - In MCC harmony project graph, select LE SPI 4-line and add satisfiers by right click on the "⬦" in LE SPI 4-line->DRV_SPI to add the "SPI" component and configure SPI as shown below.
+![](docs/spi_satis.png)
+
+![](docs/8_spi.png)
+
+**Step 7** - In MCC harmony project graph, select SPI and add satisfiers by right click on the "⬦" in Instance->SPI to add the SERCOM0 component and configure SERCOM1 as shown below.
+
+![](docs/7_sercom1.png)
+
+**Step 8** - In MCC harmony project graph, Add the Combined Interface from device resources under Libraries->Harmony->wireless->drivers->Zigbee->Device Types and will prompt an Auto-activation for "TRNG","wolfcrypt Library","TCC2","Device_Support","PDS_SubSystem","NVM","Cryptographic" component, give yes to add the component and give yes to Auto-connect.
+
+- In Device_Support add satisfiers by right click on the "⬦" in Device_Support->RTC to add the RTC component.
+
+![](docs/Dev_sup.png)
 
 - Add UART components needed for console logs and commands. Right click on the "⬦" in Zigbee console and add the satisfier and in the same way add SERCOM0 to the USART console. 
 
 ![](docs/ci_mcc.png)
 
-**Step 12** - In MCC harmony project graph select the SERCOM0 and configure as shown below.
+**Step 9** - In MCC harmony project graph select the SERCOM0 and configure as shown below.
 
 ![](docs/10_sercom0.png)
 
-**Step 13** - In MCC harmony project graph, select wolfCrypt Library and configure as mentioned below.
+**Step 10** - In MCC harmony project graph, select wolfCrypt Library and configure as mentioned below.
 
 ![](docs/12_wolf.png)
 
+**Step 11** - In MCC harmony project graph, select system and configure as mentioned below.
+
+![](docs/2_system1.png) ![](docs/3_system2.png)
+
+**Step 12** - In MCC harmony project graph, select Core and configure as mentioned below.
+
+![](docs/5_core.png)
+
+**Step 13** - In MCC harmony project graph, select FreeRTOS and configure as mentioned below.
+
+![](docs/4_freertos.png)
+
 **Step 14** - In project graph, go to Plugins->Pin configurations->Pin settings and set the pin configuration as shown below.
+
+- Use these PIN Names while configuring.
+
+```
+GFX_DISP_INTF_PIN_CS
+GFX_DISP_INTF_PIN_RSDC
+GFX_DISP_INTF_PIN_RESET
+GFX_DISP_INTF_PIN_EN
+```
 
 ![](docs/pinsetting.png)
 
@@ -424,9 +460,9 @@ LCD_PRINT(0,2,printData);
 
 ### Getting started with ZIGBEE MULTISENSOR with WBZ451 CURIOSITY BOARD.
 
-The Multisensor device sends the Temperature and Humidity values to the Zigbee(Combined Interface) device and it displays the values in the OLED display.
+In this application the Multisensor device sends the Temperature and Humidity values to the Zigbee(Combined Interface) device and it displays the values in the OLED display.
 
-- Refer the link to Implement the [ZIGBEE MULTISENSOR](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_ZIGBEE_MULTISENSOR_TEMPHUM13_CLICK) application.
+- Refer the link to implement the [ZIGBEE MULTISENSOR](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_ZIGBEE_MULTISENSOR_TEMPHUM13_CLICK) application.
 
 ![](docs/Hardware_Setup.png)
 
