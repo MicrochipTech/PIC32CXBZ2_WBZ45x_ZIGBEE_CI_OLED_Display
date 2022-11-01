@@ -200,6 +200,9 @@ OLED C click features the PSP27801 OLED display, with the resolution of 96x96 pi
 
 **Step 17** - Design Graphics on Legato Graphics Composer.
 
+| Tip: Refer the link for [MPLAB® Harmony 3 Graphics Support Package](https://github.com/Microchip-MPLAB-Harmony/gfx)!! |
+| --- |
+
 - From the Cloned folder copy "WBZ451_ZIGBEE_CI_OLED_LEGATO.zip" file to the folder firmware\src\config\default under your MPLAB Harmony v3 application project.
 
 - Open Legato graphics composer from MCC Plugin.
@@ -399,7 +402,7 @@ LCD_PRINT(0,2,printData);
 
 - In your MPLAB Harmony v3 based application go to "firmware\src\app_zigbee\app_zigbee_handler.c" and do the following changes.
 
-	- copy and replace the following code
+	- Give Unique CS_UID
 	
 ```
 #define CS_UID 0x130620bee //Unique Identifier (UID) determining the device extended address
@@ -407,7 +410,8 @@ LCD_PRINT(0,2,printData);
 
 ![](docs/cs_uid.png)
 
-
+| Note: Make sure the device has a Unique Identifier CS_UID |
+| --- |
 	
 **Step 19** - Clean and build the project. To run the project, select "Make and program device" button.
 
@@ -449,8 +453,3 @@ Follow the steps provided in the link to [Build and program the application](htt
 ![Alt Text](docs/Working_Demo.gif)
 
 
-### Reference
-
-- MPLAB® Harmony 3 Graphics Support Package.
-
-	- Refer the link for [Harmony 3 Graphics library](https://github.com/Microchip-MPLAB-Harmony/gfx). 
