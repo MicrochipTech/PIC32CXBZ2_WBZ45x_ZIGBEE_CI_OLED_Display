@@ -246,6 +246,8 @@ GFX_DISP_INTF_PIN_EN
 
 ![](docs/legato1.png)
 
+- Click on Load an existing project.
+
 ![](docs/legato2.png)
 
 - Design the graphics using “Legato Graphics Composer”.
