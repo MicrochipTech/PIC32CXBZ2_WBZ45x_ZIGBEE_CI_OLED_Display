@@ -130,18 +130,19 @@ SET_DISPLAY_START_LINE_COMMAND
 
 - To add satisfiers as shown below right click on the "⬦" in LE External Controller->SPI Display Interface and add the satisfier "LE SPI 4-line" to add the component. 
 
-![](docs/le_ext_cont_satis.png)
-
 - Again right click on the "o" in LE External Controller->SYS_TIME and add the satisfier "TIME" and will prompt an Auto-activation for "core"&"FreeRTOS" component, give yes to add the component. 
 
 - Again right click on the "⬦" in TIME->TMR and add the satisfier "TC0" to add the component.
 
+![](docs/le_ext_cont_satis.png)
+
 **Step 6** - In MCC harmony project graph, select LE SPI 4-line and add satisfiers by right click on the "⬦" in LE SPI 4-line->DRV_SPI to add the "SPI" component and configure SPI as shown below.
+
 ![](docs/spi_satis.png)
 
 ![](docs/8_spi.png)
 
-**Step 7** - In MCC harmony project graph, select SPI and add satisfiers by right click on the "⬦" in Instance->SPI to add the SERCOM0 component and configure SERCOM1 as shown below.
+**Step 7** - In MCC harmony project graph, select SPI and add satisfiers by right click on the "⬦" in Instance->SPI to add the SERCOM1 component and configure SERCOM1 as shown below.
 
 ![](docs/7_sercom1.png)
 
@@ -165,7 +166,7 @@ SET_DISPLAY_START_LINE_COMMAND
 
 **Step 11** - In MCC harmony project graph, select system and configure as mentioned below.
 
-![](docs/2_system1.png) ![](docs/3_system2.png)
+![](docs/2_system1.png)
 
 **Step 12** - In MCC harmony project graph, select Core and configure as mentioned below.
 
@@ -188,7 +189,7 @@ GFX_DISP_INTF_PIN_EN
 
 ![](docs/pinsetting.png)
 
-**Step 15** - From the unzipped folder copy the folder click_routines(which contains the oled_c.h & oled_c.c) to the folder firmware/src under your MPLAB Harmony v3 application project.
+**Step 15** - [Generate](https://onlinedocs.microchip.com/pr/GUID-A5330D3A-9F51-4A26-B71D-8503A493DF9C-en-US-1/index.html?GUID-9C28F407-4879-4174-9963-2CF34161398E) the code and then from the unzipped folder copy the folder click_routines(which contains the oled_c.h & oled_c.c) to the folder firmware/src under your MPLAB Harmony v3 application project.
 
 **Step 16** - Add the Header (oled_c.h) and Source file (oled_c.c).
 
@@ -241,13 +242,13 @@ GFX_DISP_INTF_PIN_EN
 
 - From the Cloned folder copy "WBZ451_ZIGBEE_CI_OLED_LEGATO.zip" file to the folder firmware\src\config\default under your MPLAB Harmony v3 application project.
 
-- Open Legato graphics composer from MCC Plugin.
+- Open Legato graphics composer from “Project Graph > Plugins > Legato Graphics Composer”.
 
 ![](docs/legato1.png)
 
 ![](docs/legato2.png)
 
-- Design graphics using MPLAB Harmony “Legato Graphics Composer”. Launch it using “Project Graph > Plugins > Legato Graphics Composer”.
+- Design the graphics using “Legato Graphics Composer”.
 
 ![](docs/legato_config.png)
 
