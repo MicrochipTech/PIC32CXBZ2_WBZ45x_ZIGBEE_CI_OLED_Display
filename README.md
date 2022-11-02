@@ -31,7 +31,7 @@ Checkout the <a href="https://microchipsupport.force.com/s/" target="_blank">Tec
 
 ## 1. Introduction<a name="step1">
 
-This application demonstrates the use of an OLED Display interfaced with WBZ451 Curiosity Board using Serial Pheripheral Interface (SPI) protocol. WBZ451 Curiosity board receives data from [Multisensor](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_ZIGBEE_MULTISENSOR_TEMPHUM13_CLICK) application through Zigbeee-Combined Interface(CI) and sends the received data to OLED Display via SPI.
+This application demonstrates the integration of the OLED Display and Zigbee (Combined Interface) stack on the PIC32CxBZ2/WBZ451 device. The temperature and humidity measurements from the [Zigbee Multisensor](https://github.com/MicrochipTech/PIC32CXBZ2_WBZ45x_ZIGBEE_MULTISENSOR_TEMPHUM13_CLICK) device are displayed on the OLED C click.
 
 ![](docs/0_Hardware_Setup.png)
 
@@ -189,9 +189,9 @@ GFX_DISP_INTF_PIN_EN
 
 ![](docs/pinsetting.png)
 
-**Step 15** - [Generate](https://onlinedocs.microchip.com/pr/GUID-A5330D3A-9F51-4A26-B71D-8503A493DF9C-en-US-1/index.html?GUID-9C28F407-4879-4174-9963-2CF34161398E) the code and then from the unzipped folder copy the folder click_routines(which contains the oled_c.h & oled_c.c) to the folder firmware/src under your MPLAB Harmony v3 application project.
+**Step 15** - [Generate](https://onlinedocs.microchip.com/pr/GUID-A5330D3A-9F51-4A26-B71D-8503A493DF9C-en-US-1/index.html?GUID-9C28F407-4879-4174-9963-2CF34161398E) the code.
 
-**Step 16** - Add the Header (oled_c.h) and Source file (oled_c.c).
+**Step 16** - From the unzipped folder copy the folder click_routines(which contains the oled_c.h & oled_c.c) to the folder firmware/src under your MPLAB Harmony v3 application project and add the Header (oled_c.h) and Source file (oled_c.c).
 
 - In the project explorer, Right click on folder Header Files and add a sub folder click_routines by selecting “Add Existing Items from Folders…”
 
