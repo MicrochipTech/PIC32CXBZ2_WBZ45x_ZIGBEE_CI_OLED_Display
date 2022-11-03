@@ -439,9 +439,10 @@ LCD_PRINT(0,2,printData);
 
 ![](docs/app_zigbee_handler_c_hum.png)
 
-- In your MPLAB Harmony v3 based application go to "firmware\src\app_zigbee\app_zigbee_handler.c" and do the following changes.
+- In your MPLAB Harmony v3 based application go to "firmware\src\config\default\zigbee\z3device_configs\zigbeeAppDeviceSelect.h"" and do the following changes.
 
-	- Give Unique CS_UID
+| Note: Make sure the device has a Unique Identifier CS_UID |
+| --- |
 	
 ```
 #define CS_UID 0x130620bee //Unique Identifier (UID) determining the device extended address
@@ -449,8 +450,6 @@ LCD_PRINT(0,2,printData);
 
 ![](docs/cs_uid.png)
 
-| Note: Make sure the device has a Unique Identifier CS_UID |
-| --- |
 	
 **Step 19** - Clean and build the project. To run the project, select "Make and program device" button.
 
