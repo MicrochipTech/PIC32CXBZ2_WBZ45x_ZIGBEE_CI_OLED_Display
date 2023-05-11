@@ -7,7 +7,7 @@
         "version": "1.0.0",
         "displayName": "PIC32CXBZ2_WBZ45x ZIGBEE COMBINED INTERFACE WITH OLED DISPLAY",
         "projectName": "PIC32CXBZ2_WBZ45x_ZIGBEE_CI_OLED_Display",
-        "shortDescription": "This application demonstrates the use of an MICRF112-433-EV and MICRF220/219A-433-EV using ASK Modulation.",
+        "shortDescription": "IoT Made Easy!-This application demonstrates the use of an MICRF112-433-EV and MICRF220/219A-433-EV using ASK Modulation.",
         "ide": {
             "name": "MPLAB X",
             "semverRange": ">=6.00"
